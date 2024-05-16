@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Réservation Hôtelerie</title>
+        <link href="CSS/main.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <form>
+            <table class="center border">
+                <tr>
+                    <td colspan="2"><img src="Images/hotel.png" width="75px" height="75px"></td>
+                    <td colspan="2">France - Etranger</td>
+                </tr>
+                <tr>
+                   <td colspan="2">Lieu du séjour :</td> 
+                   <td colspan="2"><input type="text" name="lieu" placeholder="Lieu du séjour"></td> 
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Arrivée
+                        <br>
+                        <input type="date" name="arrivee" id="arrivee" onchange="checkDate()">
+                    </td>
+                    <td colspan="2">
+                        Départ
+                        <br>
+                        <input type="date" name="depart" id="depart">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adulte</td>
+                    <td><input type="text" min="0" name="adulte" id="adulte" value="0" disabled></td>
+                    <td><img src="Images/plus.png" width="50px" height="50px" class="add_remove" onclick="add('adulte')"></td>
+                    <td><img src="Images/retirer.png" width="50px" height="50px" class="add_remove" onclick="substract('adulte')"></td>
+                </tr>
+                <tr>
+                    <td>Enfant</td>
+                    <td><input type="text" min="0" name="enfant" id="enfant" value="0" disabled></td>
+                    <td><img src="Images/plus.png" width="50px" height="50px" class="add_remove" onclick="add('enfant')"></td>
+                    <td><img src="Images/retirer.png" width="50px" height="50px" class="add_remove" onclick="substract('enfant')"></td>
+                </tr>
+                <tr>
+                    <td>Chambre</td>
+                    <td><input type="text" min="0" name="chambre" id="chambre" value="0" disabled></td>
+                    <td><img src="Images/plus.png" width="50px" height="50px" class="add_remove" onclick="add('chambre')"></td>
+                    <td><img src="Images/retirer.png" width="50px" height="50px" class="add_remove" onclick="substract('chambre')"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><input type="button" name="recherche" value="Rechercher"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><input type="reset" value="Effacer"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><input type="checkbox">Je voyage pour le travail</td>
+                </tr>
+            </table>
+        </form>
+        <table class="center">
+            <tr>
+                <td><h2>Confirmation réservation</h2></td>
+            </tr>
+            <tr>
+                <td>Nombre(s) d'adulte(s) :</td>
+            </tr>
+            <tr><td></td></tr>
+            <tr>
+                <td>Nombre(s) d'enfant(s) :</td>
+            </tr>
+            <tr><td></td></tr>
+        </table>
+        <script type="text/javascript" src="JS/script.js"></script>    
+     </body>
+</html>

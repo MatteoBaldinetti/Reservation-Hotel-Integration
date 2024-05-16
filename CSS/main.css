@@ -1,0 +1,18 @@
+table.border, td{
+    border: 3px solid black;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.center {
+    text-align: center;
+}
+
+table.center {
+    border-spacing: 25px;
+    margin: auto;
+}
+
+.add_remove{
+    cursor: pointer;
+}
