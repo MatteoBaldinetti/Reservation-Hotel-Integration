@@ -1,7 +1,25 @@
-table.border, td{
+form table {
+    float : left;
+}
+
+table.noborder {
+    position: relative;
+    background-color: lightgrey;
+    border: 0px;
+    margin-left: 600px;
+    padding: 10px;
+}
+
+table.border {
     border: 3px solid black;
     border-collapse: collapse;
     background-color: white;
+}
+
+table.border td {
+    border: 3px solid black;
+    border-collapse: collapse;
+    background-color: white;  
 }
 
 .center {

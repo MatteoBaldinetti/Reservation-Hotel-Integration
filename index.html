@@ -7,7 +7,7 @@
     </head>
     <body>
         <form>
-            <table class="center border">
+            <table class="center border" id="reservation">
                 <tr>
                     <td colspan="2"><img src="Images/hotel.png" width="75px" height="75px"></td>
                     <td colspan="2">France - Etranger</td>
@@ -37,8 +37,8 @@
                 <tr>
                     <td>Enfant</td>
                     <td><input type="text" min="0" name="enfant" id="enfant" value="0" disabled></td>
-                    <td><img src="Images/plus.png" width="50px" height="50px" class="add_remove" onclick="add('enfant')"></td>
-                    <td><img src="Images/retirer.png" width="50px" height="50px" class="add_remove" onclick="substract('enfant')"></td>
+                    <td><img src="Images/plus.png" width="50px" height="50px" class="add_remove" onclick="add('enfant') ; addRow()"></td>
+                    <td><img src="Images/retirer.png" width="50px" height="50px" class="add_remove" onclick="substract('enfant') ; removeRow()"></td>
                 </tr>
                 <tr>
                     <td>Chambre</td>
@@ -47,28 +47,50 @@
                     <td><img src="Images/retirer.png" width="50px" height="50px" class="add_remove" onclick="substract('chambre')"></td>
                 </tr>
                 <tr>
-                    <td colspan="4"><input type="button" name="recherche" value="Rechercher"></td>
+                    <td colspan="4"><input type="button" name="recherche" value="Rechercher" onclick="updateValues()"></td>
                 </tr>
                 <tr>
                     <td colspan="4"><input type="reset" value="Effacer"></td>
                 </tr>
                 <tr>
-                    <td colspan="4"><input type="checkbox">Je voyage pour le travail</td>
+                    <td colspan="4"><input type="checkbox" id="checkbox_travail">Je voyage pour le travail</td>
                 </tr>
             </table>
         </form>
-        <table class="center">
+        <table class="noborder">
             <tr>
-                <td><h2>Confirmation réservation</h2></td>
+                <td>
+                    <h2>Confirmation réservation</h2>
+                </td>
             </tr>
             <tr>
-                <td>Nombre(s) d'adulte(s) :</td>
+                <td>
+                    Nombre(s) d'adulte(s) :
+                    <br>
+                    <p id="nb_adulte">0</p>
+                </td>
             </tr>
-            <tr><td></td></tr>
             <tr>
-                <td>Nombre(s) d'enfant(s) :</td>
+                <td>
+                    Nombre(s) d'enfant(s) :
+                    <br>
+                    <p id="nb_enfant">0</p>
+                </td>
             </tr>
-            <tr><td></td></tr>
+            <tr>
+                <td>
+                    Nombre(s) de chambre(s) :
+                    <br>
+                    <p id="nb_chambre">0</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Voyage pour le travail : 
+                    <br>
+                    <p id="travail">Non</p>
+                </td>
+            </tr>
         </table>
         <script type="text/javascript" src="JS/script.js"></script>    
      </body>

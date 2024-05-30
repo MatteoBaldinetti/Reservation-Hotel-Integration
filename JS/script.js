@@ -1,6 +1,7 @@
 var adulte = document.getElementById("adulte");
 var enfant = document.getElementById("enfant");
 var chambre = document.getElementById("chambre");
+var parent = document.getElementById("reservation").lastChild;
 
 var champ_arrivee = document.getElementById("arrivee");
 var champ_depart = document.getElementById("depart");
@@ -31,5 +32,30 @@ function substract(input) {
 }
 
 function checkDate() {
-    champ_depart.setAttribute("min", champ_arrivee.value)
+    champ_depart.setAttribute("min", champ_arrivee.value);
+    var date_depart = document.getElementById("depart").min;
+    champ_arrivee.setAttribute("min", date_depart);
+
 }
+
+function addRow() {
+    var child = document.createElement("tr");
+    child.innerHTML = "<td colspan='4'>Age enfant : <input type=number min=0 max=17></td>";
+    parent.appendChild(child);
+}
+
+function removeRow() {
+    parent.removeChild(parent.lastChild);
+}
+
+function updateValues() {
+    document.getElementById("nb_adulte").innerHTML = adulte.value;
+    document.getElementById("nb_enfant").innerHTML = enfant.value;
+    document.getElementById("nb_chambre").innerHTML = chambre.value;
+    if (document.getElementById("checkbox_travail").checked) {
+        document.getElementById("travail").innerHTML = "Oui";
+    } else {
+        document.getElementById("travail").innerHTML = "Non";
+    }
+}
+
